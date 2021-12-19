@@ -50,6 +50,9 @@
     async function loop() {
         webcam.update(); // update the webcam frame
         await predict();
+        //Webカメラの映像を画面に表示する
+        webcamContainer.innerHTML = '';
+        webcamContainer.appendChild(webcam.canvas);
         window.requestAnimationFrame(loop);
     }
 
