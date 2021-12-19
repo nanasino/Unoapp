@@ -38,6 +38,10 @@
         webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
         await webcam.setup(); // request access to the webcam
         await webcam.play();
+        
+          //Webカメラの映像を画面に表示する
+        webcamContainer.innerHTML = '';
+        webcamContainer.appendChild(webcam.canvas);
 
         // append elements to the DOM
         document.getElementById("webcam-container").appendChild(webcam.canvas);
@@ -50,9 +54,7 @@
     async function loop() {
         webcam.update(); // update the webcam frame
         await predict();
-        //Webカメラの映像を画面に表示する
-        webcamContainer.innerHTML = '';
-        webcamContainer.appendChild(webcam.canvas);
+      
         window.requestAnimationFrame(loop);
     }
 
