@@ -7,6 +7,7 @@
 </head>
 <body>
     <div>Teachable Machine Image Model</div>
+    <div>Please scan UNO card</div>
     <img src="my_model/UNO.png">
     
     <div id="result_div"></div>
@@ -62,26 +63,26 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
-        for (let i = 0; i < maxPredictions; i++) {
+        
             let result = [
-   ["green0", "green1", "green2", "green3", "blue0", "red0", "yellow0"]
-   ["green0", "green1", "green2", "green3", "blue1", "red1", "yellow1"]
-   ["green0", "green1", "green2", "green3", "blue2", "red2", "yellow2"]
-   ["green0", "green1", "green2", "green3", "blue3", "red3", "yellow3"]
-   ["greenPlus2", "bluePlus2", "redPlus2", "yellowPlus2"]
-   ["blue0", "blue1", "blue2", "blue3", "green0", "red0", "yellow0"]
-   ["blue0", "blue1", "blue2", "blue3", "green1", "red1", "yellow1"]
-   ["blue0", "blue1", "blue2", "blue3", "green2", "red2", "yellow2"]
-   ["blue0", "blue1", "blue2", "blue3", "green3", "red3", "yellow3"]
-   ["greenPlus2", "bluePlus2", "redPlus2", "yellowPlus2"]
-   ["red0", "red1", "red2", "red3", "green0", "blue0", "yellow0"]
-   ["red0", "red1", "red2", "red3", "green1", "blue1", "yellow1"]
-   ["red0", "red1", "red2", "red3", "green2", "blue2", "yellow2"]
-   ["red0", "red1", "red2", "red3", "green3", "blue3", "yellow3"]
-   ["greenPlus2", "bluePlus2", "redPlus2", "yellowPlus2"]
-   ["yellow0", "yellow1", "yellow2", "yellow3", "green0", "blue0", "red0"]
-   ["yellow0", "yellow1", "yellow2", "yellow3", "green1", "blue1", "red1"]
-   ["yellow0", "yellow1", "yellow2", "yellow3", "green2", "blue2", "red3"]
+   ["green0", "green1", "green2", "green3", "blue0", "red0", "yellow0"],
+   ["green0", "green1", "green2", "green3", "blue1", "red1", "yellow1"],
+   ["green0", "green1", "green2", "green3", "blue2", "red2", "yellow2"],
+   ["green0", "green1", "green2", "green3", "blue3", "red3", "yellow3"],
+   ["greenPlus2", "bluePlus2", "redPlus2", "yellowPlus2"],
+   ["blue0", "blue1", "blue2", "blue3", "green0", "red0", "yellow0"],
+   ["blue0", "blue1", "blue2", "blue3", "green1", "red1", "yellow1"],
+   ["blue0", "blue1", "blue2", "blue3", "green2", "red2", "yellow2"],
+   ["blue0", "blue1", "blue2", "blue3", "green3", "red3", "yellow3"],
+   ["greenPlus2", "bluePlus2", "redPlus2", "yellowPlus2"],
+   ["red0", "red1", "red2", "red3", "green0", "blue0", "yellow0"],
+   ["red0", "red1", "red2", "red3", "green1", "blue1", "yellow1"],
+   ["red0", "red1", "red2", "red3", "green2", "blue2", "yellow2"],
+   ["red0", "red1", "red2", "red3", "green3", "blue3", "yellow3"],
+   ["greenPlus2", "bluePlus2", "redPlus2", "yellowPlus2"],
+   ["yellow0", "yellow1", "yellow2", "yellow3", "green0", "blue0", "red0"],
+   ["yellow0", "yellow1", "yellow2", "yellow3", "green1", "blue1", "red1"],
+   ["yellow0", "yellow1", "yellow2", "yellow3", "green2", "blue2", "red3"],
    ["yellow0", "yellow1", "yellow2", "yellow3", "green3", "blue3", "red3"]                        
 ]
             
@@ -103,8 +104,7 @@
     element.src = "images/" + result[card][i] + ".png";
     result_div.appendChild(element);
   }
-}
-        }
+    }
     
 </script>
 
