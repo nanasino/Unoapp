@@ -23,7 +23,7 @@
 
     // the link to your model provided by Teachable Machine export panel
     const URL = "./my_model/";
-
+    let now_card = null;
     let model, webcam, labelContainer, maxPredictions;
 
     // Load the image model and setup the webcam
@@ -45,12 +45,7 @@
         await webcam.play();
          window.requestAnimationFrame(loop);
 
-        // append elements to the DOM
-        document.getElementById("webcam-container").appendChild(webcam.canvas);
-        labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < maxPredictions; i++) { // and class labels
-            labelContainer.appendChild(document.createElement("div"));
-        }
+      
     }
 
     async function loop() {
