@@ -9,6 +9,8 @@
     <div>Teachable Machine Image Model</div>
     <img src="my_model/UNO.png">
     
+    <div id="result_div"></div>
+    
 <button type="button" onclick="init()">Start</button>
 <div id="webcam-container"></div>
 <div id="label-container"></div>
@@ -83,7 +85,7 @@
    ["yellow0", "yellow1", "yellow2", "yellow3", "green3", "blue3", "red3"]                        
 ]
             
-     <div id="result_div"></div>
+    
   // predict can take in an image, video or canvas html element
   const prediction = await model.predict(webcam.canvas);
 
@@ -103,7 +105,7 @@
   }
 }
         }
-    }
+    
 </script>
 
 </body>
