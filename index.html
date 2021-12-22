@@ -98,13 +98,13 @@ for (let i = 0; i < maxPredictions; i++) { // and class labels
   }
     if(now_card == card) return;
     now_card = card
-  for(let i = 0; i < result[card].length; i++){
-    let result_div = document.getElementById("result_div");
-    result_div.innerHTML = "";
-    let element = document.createElement("img");
-    element.src = "images/" + result[card][i] + ".png";
-    result_div.appendChild(element);
-  }
+ for (let i = 0; i < result[card].length; i++) {
+                    let result_div = document.getElementById("result_div");
+                    result_div.innerHTML = "";
+                    let element = document.createElement("img");
+                    element.src = "images/" + result[card][i] + ".png";
+                    result_div.appendChild(element);
+                }
     }
     
 </script>
